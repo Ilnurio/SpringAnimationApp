@@ -14,6 +14,8 @@
 		466F42ED2A0183A800ABF2B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466F42EC2A0183A800ABF2B4 /* Assets.xcassets */; };
 		466F42F02A0183A800ABF2B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466F42EE2A0183A800ABF2B4 /* LaunchScreen.storyboard */; };
 		466F42FD2A0186F900ABF2B4 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 466F42FC2A0186F900ABF2B4 /* SpringAnimation */; };
+		466F43022A01989900ABF2B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466F43012A01989900ABF2B4 /* Animation.swift */; };
+		466F43042A019FFE00ABF2B4 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466F43032A019FFE00ABF2B4 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		466F42EC2A0183A800ABF2B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		466F42EF2A0183A800ABF2B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		466F42F12A0183A800ABF2B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		466F43012A01989900ABF2B4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		466F43032A019FFE00ABF2B4 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		466F42FA2A01843200ABF2B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				466F43012A01989900ABF2B4 /* Animation.swift */,
+				466F43032A019FFE00ABF2B4 /* DataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 			files = (
 				466F42E82A0183A700ABF2B4 /* ViewController.swift in Sources */,
 				466F42E42A0183A700ABF2B4 /* AppDelegate.swift in Sources */,
+				466F43022A01989900ABF2B4 /* Animation.swift in Sources */,
+				466F43042A019FFE00ABF2B4 /* DataSource.swift in Sources */,
 				466F42E62A0183A700ABF2B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
