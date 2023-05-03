@@ -22,36 +22,31 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        runButtonLabel.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        setUpLabels()
     }
 
     @IBAction func runSpringAnimation(_ sender: SpringButton) {
-        
-        for animation in animation.preset {
-            springAnimationView.animation = animation
-            presetLabel.text = "preset: \(animation)"
-        }
-     
-        for curve in animation.curve {
-            springAnimationView.curve = curve
-            curveLabel.text = "curve: \(curve)"
-        }
-        
+        springAnimationView.animation = animation.preset
+        springAnimationView.curve = animation.curve
         springAnimationView.force = animation.force
-        forceLabel.text = "forse: \(springAnimationView.force)"
-        
         springAnimationView.duration = animation.duration
-        durationLabel.text = "duration: \(springAnimationView.duration)"
-        
         springAnimationView.delay = animation.delay
-        delayLabel.text = "delay: \(springAnimationView.delay)"
-        
         springAnimationView.animate()
         
+        setUpLabels()
+        
         animation = Animation.getValue()
-        for preset in animation.preset {
-            runButtonLabel.setTitle("Run: \(preset)", for: .normal)
-        }
+        runButtonLabel.setTitle("Run: \(animation.preset)", for: .normal)
     }
-    
+}
+
+ // MARK: - setUpLabels
+extension ViewController {
+    private func setUpLabels() {
+        presetLabel.text = "preset: \(animation.preset)"
+        curveLabel.text = "preset: \(animation.curve)"
+        forceLabel.text = "forse: \(animation.force)"
+        durationLabel.text = "duration: \(animation.duration)"
+        delayLabel.text = "delay: \(animation.delay)"
+    }
 }

@@ -9,15 +9,15 @@ import Foundation
 
 struct Animation {
     
-    var preset: [String]
-    var curve: [String]
+    var preset: String
+    var curve: String
     var force: Double
     var duration: Double
     var delay: Double
     
     static func getValue() -> Animation {
-        let animations = DataSource.shared.animations.shuffled()
-        let curves = DataSource.shared.curves.shuffled()
+        let animations = DataSource.shared.animations.randomElement() ?? ""
+        let curves = DataSource.shared.curves.randomElement() ?? ""
         
         let animation = Animation(
             preset: animations,

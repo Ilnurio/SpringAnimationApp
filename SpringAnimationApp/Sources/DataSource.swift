@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataSource {
+final class DataSource {
     
     static let shared = DataSource()
     
