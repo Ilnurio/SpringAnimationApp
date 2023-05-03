@@ -15,33 +15,17 @@ struct Animation {
     var duration: Double
     var delay: Double
     
-    static func getValue() -> [Animation] {
-        // создаем пустой массив, чтобы его заполнить объектами данных
-        var animations:[Animation] = []
-        // Данные берем из класса DataStore создавая экземпляры класса(массивы)
-        // свойсто shuffled() перемешивает данные в массиве данных
-        let animation = DataSource.shared.animations.shuffled()
-        let curve = DataSource.shared.curves.shuffled()
+    static func getValue() -> Animation {
+        let animations = DataSource.shared.animations.shuffled()
+        let curves = DataSource.shared.curves.shuffled()
         
-        // создаем свойство, которое принимает наименьшее количество элементов массива
-        let iterationCount = min(
-            animation.count,
-            curve.count
+        let animation = Animation(
+            preset: animations,
+            curve: curves,
+            force: Double.random(in: 0...1),
+            duration: Double.random(in: 0...1),
+            delay: Double.random(in: 0...1)
         )
-        
-        // перебираем в цикле целые числа(индексы) для дальнейшего извлечения данных
-        // внутри цикла инициализируем экземпляр модели
-        for _ in 0..<iterationCount {
-            let animation = Animation(
-                preset: animation,
-                curve: curve,
-                force: Double.random(in: 0...1),
-                duration: Double.random(in: 0...1),
-                delay: Double.random(in: 0...1)
-            )
-            animations.append(animation)
-        }
-        
-        return animations
+        return animation
     }
 }

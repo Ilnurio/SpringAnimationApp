@@ -16,28 +16,42 @@ final class ViewController: UIViewController {
     @IBOutlet var forceLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
+    @IBOutlet var runButtonLabel: SpringButton!
+    
+    var animation = Animation.getValue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        runButtonLabel.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     }
 
     @IBAction func runSpringAnimation(_ sender: SpringButton) {
-        let animation = Animation.getValue()
-
-        springAnimationView.animation = animation.preset
+        
+        for animation in animation.preset {
+            springAnimationView.animation = animation
+            presetLabel.text = "preset: \(animation)"
+        }
+     
+        for curve in animation.curve {
+            springAnimationView.curve = curve
+            curveLabel.text = "curve: \(curve)"
+        }
+        
+        springAnimationView.force = animation.force
+        forceLabel.text = "forse: \(springAnimationView.force)"
+        
+        springAnimationView.duration = animation.duration
+        durationLabel.text = "duration: \(springAnimationView.duration)"
+        
+        springAnimationView.delay = animation.delay
+        delayLabel.text = "delay: \(springAnimationView.delay)"
+        
+        springAnimationView.animate()
+        
+        animation = Animation.getValue()
+        for preset in animation.preset {
+            runButtonLabel.setTitle("Run: \(preset)", for: .normal)
+        }
     }
     
 }
-
-
-
-//@IBAction func runSpringAnimation(_ sender: SpringButton) {
-//    springAnimationView.animation = "shake"
-//    springAnimationView.curve = "easeInOut"
-//    springAnimationView.force = 2
-//    springAnimationView.animate()
-//
-//    sender.animation = "pop"
-//    sender.duration = 2
-//    sender.animate()
-//}
