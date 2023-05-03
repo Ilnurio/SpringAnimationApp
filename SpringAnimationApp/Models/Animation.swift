@@ -22,9 +22,9 @@ struct Animation {
         let animation = Animation(
             preset: animations,
             curve: curves,
-            force: Double.random(in: 0...1),
-            duration: Double.random(in: 0...1),
-            delay: Double.random(in: 0...1)
+            force: Double(round(10 * Double.random(in: 0...1)) / 10),
+            duration: Double(round(10 * Double.random(in: 0...1)) / 10),
+            delay: Double(round(10 * Double.random(in: 0...1)) / 10)
         )
         return animation
     }
