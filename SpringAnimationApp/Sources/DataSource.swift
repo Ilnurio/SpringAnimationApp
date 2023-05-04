@@ -5,8 +5,6 @@
 //  Created by Ilnur on 02.05.2023.
 //
 
-import Foundation
-
 final class DataSource {
     
     static let shared = DataSource()

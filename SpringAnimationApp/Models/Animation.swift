@@ -9,21 +9,21 @@ import Foundation
 
 struct Animation {
     
-    var preset: String
-    var curve: String
-    var force: Double
-    var duration: Double
-    var delay: Double
+    let preset: String
+    let curve: String
+    let force: Double
+    let duration: Double
+    let delay: Double
     
     static func getValue() -> Animation {
-        let animations = DataSource.shared.animations.randomElement() ?? ""
-        let curves = DataSource.shared.curves.randomElement() ?? ""
+        let animations = DataSource.shared.animations.randomElement() ?? "wobble"
+        let curves = DataSource.shared.curves.randomElement() ?? "easeIn"
         
         let animation = Animation(
             preset: animations,
             curve: curves,
-            force: Double(round(10 * Double.random(in: 0...1)) / 10),
-            duration: Double(round(10 * Double.random(in: 0...1)) / 10),
+            force: Double(round(10 * Double.random(in: 1...1.5)) / 10),
+            duration: Double(round(10 * Double.random(in: 1...2)) / 10),
             delay: Double(round(10 * Double.random(in: 0...1)) / 10)
         )
         return animation

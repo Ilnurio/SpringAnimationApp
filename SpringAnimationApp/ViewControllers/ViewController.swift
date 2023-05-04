@@ -10,22 +10,25 @@ import SpringAnimation
 
 final class ViewController: UIViewController {
 
+     // MARK: - IB Outlets
     @IBOutlet var springAnimationView: SpringView!
     @IBOutlet var presetLabel: UILabel!
     @IBOutlet var curveLabel: UILabel!
     @IBOutlet var forceLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
-    @IBOutlet var runButtonLabel: SpringButton!
+    @IBOutlet var runLabel: UIButton!
     
-    var animation = Animation.getValue()
+     // MARK: - Private properties
+    private var animation = Animation.getValue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLabels()
     }
 
-    @IBAction func runSpringAnimation(_ sender: SpringButton) {
+     // MARK: - IB Actions
+    @IBAction func runSpringAnimation(_ sender: UIButton) {
         springAnimationView.animation = animation.preset
         springAnimationView.curve = animation.curve
         springAnimationView.force = animation.force
@@ -36,7 +39,7 @@ final class ViewController: UIViewController {
         setUpLabels()
         
         animation = Animation.getValue()
-        runButtonLabel.setTitle("Run: \(animation.preset)", for: .normal)
+        runLabel.setTitle("Run: \(animation.preset)", for: .normal)
     }
 }
 

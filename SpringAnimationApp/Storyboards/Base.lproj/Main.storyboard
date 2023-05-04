@@ -104,7 +104,7 @@
                         <outlet property="durationLabel" destination="dLl-DL-1RN" id="lMe-mw-wq0"/>
                         <outlet property="forceLabel" destination="4Ar-XS-jX5" id="OtB-fq-bwW"/>
                         <outlet property="presetLabel" destination="qaz-d3-dIl" id="fcn-mi-viS"/>
-                        <outlet property="runButtonLabel" destination="Mi7-yW-yAG" id="4G8-Aq-AR3"/>
+                        <outlet property="runLabel" destination="Mi7-yW-yAG" id="4G8-Aq-AR3"/>
                         <outlet property="springAnimationView" destination="kSo-zm-aGg" id="imI-da-51q"/>
                     </connections>
                 </viewController>
