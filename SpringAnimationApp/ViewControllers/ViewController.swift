@@ -44,7 +44,7 @@ final class ViewController: UIViewController {
 extension ViewController {
     private func setUpLabels() {
         presetLabel.text = "preset: \(animation.preset)"
-        curveLabel.text = "preset: \(animation.curve)"
+        curveLabel.text = "curve: \(animation.curve)"
         forceLabel.text = "forse: \(animation.force)"
         durationLabel.text = "duration: \(animation.duration)"
         delayLabel.text = "delay: \(animation.delay)"
